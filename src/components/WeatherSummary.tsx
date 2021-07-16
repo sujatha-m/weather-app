@@ -27,6 +27,8 @@ export const WeatherSummary: FC<WeatherSummaryProps> = ({ location }) => {
       <hr />
       <h2>{location.name}</h2>
       <WeatherEntry weather={weather} />
+      <br></br>
+      <button className="btn btn-primary">Add to Favorites</button>
     </div>
   );
 };

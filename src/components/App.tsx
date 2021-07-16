@@ -4,15 +4,20 @@ import { LocationSearch } from "./LocationSearch";
 import { WeatherLocation } from "../model/Weather";
 import { searchLocation } from "./api_if";
 import { WeatherSummary } from "./WeatherSummary";
+import { ErrorAlert } from "./Alerts";
 
 const App: FC = () => {
   const [currentLocation, setCurrentLocation] =
     useState<WeatherLocation | null>(null);
+  const [error, setError] = useState("");
 
   let addLocation = async (term: string) => {
+    setError("");
     const location = await searchLocation(term);
 
-    if (location) {
+    if (!location) {
+      setError(`No location '${term}' found!!`);
+    } else {
       setCurrentLocation(location);
     }
   };
@@ -21,7 +26,11 @@ const App: FC = () => {
     <div className="container">
       <h1>Weather App</h1>
       <LocationSearch onSearch={addLocation} />
-      <WeatherSummary location={currentLocation} />
+      <br></br>
+      {error
+        ? <ErrorAlert message={error} />
+        : <WeatherSummary location={currentLocation} />
+      }
     </div>
   );
 };
