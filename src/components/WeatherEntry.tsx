@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Weather } from "../model/Weather";
-import { getIconUrl } from "./api_if";
+import { getIconUrl } from "./ApiIf";
 
 interface WeatherEntryProps {
   weather: Weather;

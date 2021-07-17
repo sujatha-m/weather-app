@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 import "./App.css";
 import { LocationSearch } from "./LocationSearch";
 import { WeatherLocation } from "../model/Weather";
-import { searchLocation } from "./api_if";
+import { searchLocation } from "./ApiIf";
 import { WeatherSummary } from "./WeatherSummary";
 import { ErrorAlert } from "./Alerts";
 

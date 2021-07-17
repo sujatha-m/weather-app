@@ -1,0 +1,11 @@
+.container{
+    width: 500px;
+    margin: 0 auto;
+
+}
+.btn{
+    color:black;
+    padding: 5px;
+    margin: 10px;
+    background-color: coral;
+}
